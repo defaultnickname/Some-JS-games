@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<script src="../../static/js/pendulum.js"
+           type='text/javascript'>
+</script>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-container">
+
+    <div class="flex-child magenta" id="Canv">
+
+        <canvas id="canvas" width="950" height="500"></canvas>
+    </div>
+
+
+    <div class="flex-child green">
+        <form id="form" method='POST'>{% csrf_token %}
+            {{ form.as_p }}
+            <input type="Submit" value='Submit'/>
+        </form>
+        <div id='lyst'>
+            <ul>
+                {% for field in form %}
+
+                    <li id="{{ field.label }}"
+                        value="{{ field.value|default_if_none:"" }}">{{ field.label }}: {{ field.value|default_if_none:"" }}</li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+    Pendulum();
+
+    </script>
+
+
+
+{% endblock %}

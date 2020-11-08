@@ -1,0 +1,43 @@
+body {
+    background-color: whitesmoke;
+    min-height: 100%;
+    padding-top: 60px;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid yellow;
+}
+
+.flex-child:first-child {
+    margin-right: 5px;
+}
+
+.flex-container {
+    display: flex;
+
+}
+
+#form {
+    display: flex;
+    margin-left: auto;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+#lyst {
+    width: 100%;
+    display: flex;
+    align-items: start;
+
+
+    flex-direction: row;
+
+    padding-top: 50px;
+}
+#throw{
+
+    border: 2px solid black;
+}
